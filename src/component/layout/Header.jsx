@@ -29,22 +29,22 @@ function Header() {
             FlavorFind
           </h2>
         </div>
-        <div className="hidden md:flex items-center gap-9">
+        <div className=" md:flex items-center gap-15">
           <Link
-            className={`text-sm font-medium leading-normal hover:text-[#E63946] dark:hover:text-[#E63946] transition-colors ${activePage("/")}`}
+            className={`text-sm m-4 md:m-0 font-medium leading-normal hover:text-[#E63946] dark:hover:text-[#E63946] transition-colors ${activePage("/")}`}
             to="/"
           >
             Home
           </Link>
           <Link
-            className={`text-sm font-medium leading-normal hover:text-[#E63946] dark:hover:text-[#E63946] transition-colors ${activePage("/restaurants")}`}
+            className={`text-sm m-4 md:m-0 font-medium leading-normal hover:text-[#E63946] dark:hover:text-[#E63946] transition-colors ${activePage("/restaurants")}`}
             
             to="/restaurants"
           >
             Restaurants
           </Link>
           <Link
-            className={`text-sm font-medium leading-normal hover:text-[#E63946] dark:hover:text-[#E63946] transition-colors ${activePage("/blog")}`}
+            className={`text-sm m-4 md:m-0 font-medium leading-normal hover:text-[#E63946] dark:hover:text-[#E63946] transition-colors ${activePage("/blog")}`}
             to="/blog"
           >
             Blog

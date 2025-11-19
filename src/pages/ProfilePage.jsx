@@ -415,7 +415,7 @@ const handleDeletePhoto=(index)=>{
                   </div>
                   <div className="flex flex-1 flex-col gap-2 rounded-lg border border-[#E0E0E0] bg-surface-light p-3 items-center text-center">
                     <p className="text-text-light-primary tracking-light text-2xl font-bold leading-tight">
-                      128
+                      {reviews.length}
                     </p>
                     <div className="flex items-center gap-2">
                       <p className="text-text-light-secondary text-sm font-normal leading-normal">
