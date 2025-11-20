@@ -1,1 +1,1 @@
-export const serverURL='http://localhost:3000/'
+export const serverURL='https://findflavor-back-end-2.onrender.com/'
