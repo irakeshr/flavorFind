@@ -3,22 +3,17 @@ import { Link } from 'react-router-dom';
 import { getAllRestaurant } from '../services/allApi';
 import img from '../assets/bg2.png';
 
-/* -------------------------------------------------
-   tiny helper – delete if your data already has
-   a numeric field called avgRating
---------------------------------------------------*/
+ 
  
 
-/* -------------------------------------------------
-   MAIN COMPONENT
---------------------------------------------------*/
+ 
 const Restaurants = () => {
   const [restaurants, setRestaurants] = useState([]);
   const [search, setSearch]           = useState('');
   const [cuisine, setCuisine]         = useState('All');
   const [rating, setRating]           = useState('All');
 
-  /* ---------- fetch once ---------- */
+ 
   useEffect(() => {
     (async () => {
       try {
@@ -30,7 +25,7 @@ const Restaurants = () => {
     })();
   }, []);
 
-  /* ---------- build option lists ---------- */
+ 
   const cuisineOptions = useMemo(() => {       
     const set = new Set();
     restaurants.forEach(r =>
@@ -41,7 +36,7 @@ const Restaurants = () => {
 
   const ratingOptions = ['All', '4+', '3+', '2+'];
 
-  /* ---------- filter logic ---------- */
+ 
   const filtered = useMemo(() => {
     return restaurants.filter(r => {
       const s = search.toLowerCase();
@@ -62,7 +57,7 @@ const Restaurants = () => {
 
   console.log(filtered)
 
-  /* ---------- render ---------- */
+ 
   return (
     <div>
       <div

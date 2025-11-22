@@ -35,10 +35,10 @@ const ProfilePage = () => {
     date: new Date().toISOString(),
   });
 
-  /* ----------  NEW: REF FOR PDF  ---------- */
+   
   const printRef = useRef();
 
-  /* ----------  fetch  ---------- */
+  
   useEffect(() => {
     (async () => {
       try {
@@ -50,7 +50,7 @@ const ProfilePage = () => {
     })();
   }, [openModal]);
 
-  /* ----------  filtered  ---------- */
+  
   const filtered = useMemo(() => {
     let list = [...reviews];
     if (search.trim()) {
@@ -75,12 +75,12 @@ const ProfilePage = () => {
     return list;
   }, [reviews, search, ratingFilter, dateFilter, sortBy]);
 
-  /* ----------  NEW: DOWNLOAD PDF  ---------- */
+  
   const downloadPDF = async () => {
     const canvas = await html2canvas(printRef.current, {
-      scale: 2,               // higher res
-      useCORS: true,          // allow images
-      backgroundColor: null,  // transparent bg
+      scale: 2,                
+      useCORS: true,           
+      backgroundColor: null,   
     });
     const imgData = canvas.toDataURL("image/png");
 
@@ -91,12 +91,11 @@ const ProfilePage = () => {
     let heightLeft = pdfHeight;
     let position = 0;
 
-    /* first page */
+    
     pdf.addImage(imgData, "PNG", 0, position, pdfWidth, pdfHeight);
     heightLeft -= pdf.internal.pageSize.getHeight();
 
-    /* auto-paginate if content overflows */
-    while (heightLeft >= 0) {
+     while (heightLeft >= 0) {
       position = heightLeft - pdfHeight;
       pdf.addPage();
       pdf.addImage(imgData, "PNG", 0, position, pdfWidth, pdfHeight);
@@ -106,8 +105,7 @@ const ProfilePage = () => {
     pdf.save("my-reviews.pdf");
   };
 
-  /* ----------  rest of handlers (unchanged)  ---------- */
-  const handleDelete = async (id) => {
+   const handleDelete = async (id) => {
     try {
       const { status } = await deleteReviewApi(id);
       if (status === 200) setReviews((prev) => prev.filter((r) => r.id !== id));
@@ -160,7 +158,7 @@ const ProfilePage = () => {
  
   return (
     <div className="font-['Plus_Jakarta_Sans'] bg-[#F9F9F9]">
-      {/* --------------  MODAL (same as before)  -------------- */}
+       
       <Modal show={openModal} onClose={() => setOpenModal(false)} size="7xl">
         <ModalHeader className="bg-[#1A1A1A]">Edit Your Review</ModalHeader>
         <ModalBody className="bg-[#1A1A1A] overflow-auto scrollbar-hide">

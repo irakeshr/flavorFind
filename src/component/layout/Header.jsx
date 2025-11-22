@@ -43,12 +43,6 @@ function Header() {
           >
             Restaurants
           </Link>
-          <Link
-            className={`text-sm m-4 md:m-0 font-medium leading-normal hover:text-[#E63946] dark:hover:text-[#E63946] transition-colors ${activePage("/blog")}`}
-            to="/blog"
-          >
-            Blog
-          </Link>
         </div>
         <div className="flex items-center gap-2">           
           <Link
